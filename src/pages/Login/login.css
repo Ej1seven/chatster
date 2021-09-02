@@ -7,7 +7,7 @@
     font-size: 4em;
     color: white;
     background: #00aa77;
-    background-image: url("C:\Users\ej1se\OneDrive\Desktop\Portfolio Projects\Chat-App-V2\client\src\photos\ZenBG-1.png"), url("C:\Users\ej1se\OneDrive\Desktop\Portfolio Projects\Chat-App-V2\client\src\photos\ZenBG-2.png");
+    background-image: url("client\src\photos\ZenBG-1.png"), url("client\src\photos\ZenBG-2.png");
     background-repeat: repeat-x, repeat;
     font-family: 'Nunito', sans-serif;
     font-family: 'Permanent Marker', cursive;
