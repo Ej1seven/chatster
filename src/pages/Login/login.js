@@ -3,9 +3,12 @@ import "./login.css";
 
 function Login() {
     return (
-     <div className="splash-screen">
-       Chatster
-     </div>
+      <div> 
+      <div transition-style className="splash-screen">
+      <p className="app-title">Chatster</p>
+      <p className="app-logo">Hello</p>
+      </div>
+      </div>
     );
   }
   

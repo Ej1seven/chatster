@@ -6,10 +6,41 @@
     vertical-align: auto;
     font-size: 4em;
     color: white;
-    background: #00aa77;
-    background-image: url("../../photos/ZenBG-1.png"), url("../../photos/ZenBG-2.png");
+    /* background: #00aa77; */
+    background: url("../../photos/ZenBG-1.png"), url("../../photos/ZenBG-2.png");
     background-repeat: repeat-x, repeat;
     font-family: 'Nunito', sans-serif;
     font-family: 'Permanent Marker', cursive;
 }
 
+.splash-screen .app-title {
+    animation: title-transition .5s ease-in 2s forwards;
+}
+
+.splash-screen .app-logo {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    animation: logo-transition .5s ease-out 3s forwards;
+}
+
+
+@keyframes title-transition {
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 2s, opacity 2s linear;
+    }
+}
+
+@keyframes logo-transition {
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transition:  opacity 5s linear;
+    }
+}
+
+/* @media only screen and (max-width: 425px) {
+    margin:
+} */
