@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import Login from "../../client/src/pages/Login/login";
+import Login from "../src/pages/Login/login";
 import './App.css';
 
 function App() {
