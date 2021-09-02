@@ -1,0 +1,13 @@
+.splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    vertical-align: auto;
+    font-size: 4em;
+    color: white;
+    background: #00aa77;
+    background-image: url("C:\Users\ej1se\OneDrive\Desktop\Portfolio Projects\Chat-App-V2\client\src\photos\ZenBG-1.png"), url("C:\Users\ej1se\OneDrive\Desktop\Portfolio Projects\Chat-App-V2\client\src\photos\ZenBG-2.png");
+    background-repeat: repeat-x, repeat;
+}
+
