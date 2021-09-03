@@ -8,6 +8,7 @@ function Login() {
       <div transition-style className="splash-screen">
       <p className="app-title">Chatster</p>
       <img className="app-logo" src={logo}/>
+      
       </div>
       </div>
     );

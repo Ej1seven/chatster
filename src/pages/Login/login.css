@@ -4,24 +4,24 @@
     align-items: center;
     min-height: 100vh;
     vertical-align: auto;
-    font-size: 4em;
     color: white;
-    /* background: #00aa77; */
-    background: url("../../photos/ZenBG-1.png"), url("../../photos/ZenBG-2.png");
-    background-repeat: repeat-x, repeat;
+    background: url("../../photos/City-night.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Nunito', sans-serif;
     font-family: 'Permanent Marker', cursive;
 }
 
 .splash-screen .app-title {
-    animation: title-transition .5s ease-in 2s forwards;
+    font-size: 4em;
+    animation: title-transition .7s ease-in 2s forwards;
 }
 
 .splash-screen .app-logo {
     visibility: hidden;
     position: absolute;
     opacity: 0;
-    animation: logo-transition .5s ease-out 3s forwards;
+    animation: logo-transition-in 3s ease-out 3s forwards;
     width: 25%;
 }
 
@@ -31,16 +31,25 @@
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s 2s, opacity 2s linear;
+        font-size: 8rem;
     }
 }
 
-@keyframes logo-transition {
-    100% {
+@keyframes logo-transition-in {
+    75% {
         visibility: visible;
         opacity: 1;
-        transition:  opacity 5s linear;
+        transition:  opacity 2s linear;
+        width: 25%;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 2s, opacity 2s linear;
+        width: 50%;
     }
 }
+
 
 /* @media only screen and (max-width: 425px) {
     margin:
