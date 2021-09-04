@@ -95,6 +95,10 @@ input:focus {
 @media only screen and (max-width: 425px) {
   form {
     min-width: 75%;
-    height: 70%;
+    margin: 5%;
+  }
+
+  .splash-screen {
+    align-items: flex-start;
   }
 }
