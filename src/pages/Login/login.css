@@ -5,7 +5,7 @@ form {
   background-color: rgba(115, 1, 46, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.125);
   max-width: 25%;
-  height: 85vh;
+  height: 85%;
   animation: form-transition 0.5s ease-out 6s forwards;
   visibility: hidden;
   opacity: 0;
@@ -95,6 +95,6 @@ input:focus {
 @media only screen and (max-width: 425px) {
   form {
     min-width: 75%;
-    height: 70vh;
+    height: 70%;
   }
 }
