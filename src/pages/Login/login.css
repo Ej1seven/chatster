@@ -6,7 +6,7 @@ form {
   border: 1px solid rgba(255, 255, 255, 0.125);
   max-width: 25%;
   height: 85%;
-  animation: form-transition 0.5s ease-out 6s forwards;
+  animation: form-transition 0.8s ease-out 6s forwards;
   visibility: hidden;
   opacity: 0;
 }
@@ -81,7 +81,7 @@ input:focus {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
-    width: 50%;
+    width: 70%;
   }
 }
 @keyframes form-transition {
@@ -107,6 +107,6 @@ input:focus {
   }
 
   .splash-screen .app-logo {
-    margin: 70% 0;
+    margin: 60% 0;
   }
 }
