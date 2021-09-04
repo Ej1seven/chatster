@@ -95,7 +95,7 @@ input:focus {
 @media only screen and (max-width: 425px) {
   form {
     min-width: 75%;
-    margin: 10%;
+    margin: 12.5%;
   }
 
   .splash-screen {
@@ -103,10 +103,10 @@ input:focus {
   }
 
   .splash-screen .app-title {
-    margin: 50% 0;
+    margin: 70% 0;
   }
 
   .splash-screen .app-logo {
-    margin: 50% 0;
+    margin: 70% 0;
   }
 }
