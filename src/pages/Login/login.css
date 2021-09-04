@@ -95,10 +95,17 @@ input:focus {
 @media only screen and (max-width: 425px) {
   form {
     min-width: 75%;
-    margin: 5%;
+    margin: 10%;
   }
 
   .splash-screen {
     align-items: flex-start;
   }
+
+  .splash-screen .app-title {
+    margin: 50% 0;
+  }
+  
+  .splash-screen .app-logo {
+    margin: 50% 0;
 }
