@@ -27,7 +27,7 @@ function Login() {
             <span className="sign-up">Sign up</span>
           </p>
           <p>
-            Sign in as a<span className="sign-up">Demo User</span>
+            Sign in as a<span className="sign-up"> Demo User</span>
           </p>
         </form>
       </div>
