@@ -13,14 +13,22 @@ function Login() {
           <img alt="logo" className="form-logo h-1/3" src={logo} />
           <input
             type="text"
-            className="rounded m-6 bg-transparent border-2 border-white"
+            className="rounded m-5 bg-transparent border-2 border-white w-3/5 "
             placeholder="Email"
           />
           <input
             type="text"
-            className="rounded m-6 bg-transparent border-2 border-white"
+            className="rounded m-5 bg-transparent border-2 border-white w-3/5 "
             placeholder="Password"
           />
+          <button className="border-2 rounded w-3/5 mb-4">Login</button>
+          <p>
+            Don't have an account?
+            <span className="sign-up">Sign up</span>
+          </p>
+          <p>
+            Sign in as a<span className="sign-up">Demo User</span>
+          </p>
         </form>
       </div>
     </div>
