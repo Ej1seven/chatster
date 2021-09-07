@@ -1,39 +1,24 @@
-import { createStore } from "redux";
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const showReducer = (state = { show: false, passwordIcon: false }, action) => {
-  if (action.type === "toggleRegistrationPage") {
-    return {
-      show: !state.show,
-    };
-  }
-  if (action.type === "togglePasswordIcon") {
-    return {
-      passwordIcon: !state.passwordIcon,
-    };
-  }
-  return state;
-};
+const initialState = { showModal: false, passwordIcon: false };
 
-const store = createStore(showReducer);
+const showSlice = createSlice({
+  name: "show",
+  initialState,
+  reducers: {
+    showModal(state) {
+      state.showModal = !state.showModal;
+    },
+    passwordIcon(state) {
+      state.passwordIcon = !state.passwordIcon;
+    },
+  },
+});
 
-// import { createSlice, configureStore } from "@reduxjs/toolkit";
+const store = configureStore({
+  reducer: showSlice.reducer,
+});
 
-// const initialShowState = { show: false };
-
-// const showSlice = createSlice({
-//   name: "show",
-//   initialShowState,
-//   reducers: {
-//     toggleRegistrationPage(state) {
-//       state.show = !state.show;
-//     },
-//   },
-// });
-
-// const store = configureStore({
-//   reducer: showSlice.reducer,
-// });
-
-// export const showActions = showSlice.actions;
+export const showActions = showSlice.actions;
 
 export default store;

@@ -1,19 +1,28 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { showActions } from "../../store";
 import logo from "../../photos/logo-white.png";
 import Register from "../Register/register";
 import "./login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const showModal = useSelector((state) => state.show);
+  const showModal = useSelector((state) => state.showModal);
   const showPassword = useSelector((state) => state.passwordIcon);
 
   const showHandler = () => {
-    dispatch({ type: "toggleRegistrationPage" });
+    dispatch(showActions.showModal());
   };
   const showPasswordHandler = () => {
-    dispatch({ type: "togglePasswordIcon" });
+    dispatch(showActions.passwordIcon());
+  };
+  const inputChanged = (e) => {
+    let formInput = { ...this.state.formInput };
+    let passwordValues = { ...this.state.passwordValues };
+    formInput[e.target.name] = e.target.value;
+    this.setState({ formInput });
+    passwordValues["password"] = e.target.value;
+    this.setState({ passwordValues });
   };
 
   return (
