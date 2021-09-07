@@ -82,6 +82,10 @@ span:hover {
   right: 22%;
 }
 
+.icon:hover {
+  cursor: pointer;
+}
+
 @keyframes title-transition {
   100% {
     visibility: hidden;
