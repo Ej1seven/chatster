@@ -76,6 +76,12 @@ span:hover {
   width: 60%;
 }
 
+.icon {
+  position: absolute;
+  top: 72%;
+  right: 22%;
+}
+
 @keyframes title-transition {
   100% {
     visibility: hidden;
@@ -123,5 +129,9 @@ span:hover {
 
   .splash-screen .app-logo {
     margin: 60% 0;
+  }
+
+  .icon {
+    top: 73%;
   }
 }
