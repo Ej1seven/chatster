@@ -35,7 +35,8 @@ const Login = () => {
                 className="rounded m-5 bg-transparent border-2 border-white w-3/5 "
                 placeholder="Password"
               />
-              <i class="fas fa-eye icon"></i>
+              <i class="fas fa-eye-slash icon"></i>
+              {/* <i class="fas fa-eye icon"></i> */}
               <button className="border-2 rounded w-3/5 mb-4"> Login</button>
             </>
           ) : (
