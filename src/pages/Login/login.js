@@ -6,9 +6,13 @@ import "./login.css";
 const Login = () => {
   const dispatch = useDispatch();
   const showModal = useSelector((state) => state.show);
+  const showPassword = useSelector((state) => state.passwordIcon);
 
   const showHandler = () => {
     dispatch({ type: "toggleRegistrationPage" });
+  };
+  const showPasswordHandler = () => {
+    dispatch({ type: "togglePasswordIcon" });
   };
 
   return (

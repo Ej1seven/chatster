@@ -1,9 +1,14 @@
 import { createStore } from "redux";
 
-const showReducer = (state = { show: false }, action) => {
+const showReducer = (state = { show: false, passwordIcon: false }, action) => {
   if (action.type === "toggleRegistrationPage") {
     return {
       show: !state.show,
+    };
+  }
+  if (action.type === "togglePasswordIcon") {
+    return {
+      passwordIcon: !state.passwordIcon,
     };
   }
   return state;
