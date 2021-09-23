@@ -1,14 +1,16 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { showActions } from "../../store";
+import { showActions, formActions } from "../../store";
 import logo from "../../photos/logo-white.png";
 import Register from "../Register/register";
 import "./login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const showModal = useSelector((state) => state.showModal);
-  const showPassword = useSelector((state) => state.passwordIcon);
+  const showModal = useSelector((state) => state.show.showModal);
+  const showPassword = useSelector((state) => state.show.passwordIcon);
+  const email = useSelector((state) => state.form.email);
+  const password = useSelector((state) => state.form.password);
 
   const showHandler = () => {
     dispatch(showActions.showModal());
@@ -16,13 +18,47 @@ const Login = () => {
   const showPasswordHandler = () => {
     dispatch(showActions.passwordIcon());
   };
-  const inputChanged = (e) => {
-    let formInput = { ...this.state.formInput };
-    let passwordValues = { ...this.state.passwordValues };
-    formInput[e.target.name] = e.target.value;
-    this.setState({ formInput });
-    passwordValues["password"] = e.target.value;
-    this.setState({ passwordValues });
+  const handleEmailChanged = (e) => {
+    dispatch(formActions.email(e.target.value));
+  };
+  const handlePasswordChanged = (e) => {
+    dispatch(formActions.password(e.target.value));
+  };
+  const submit = (event) => {
+    event.preventDefault();
+    console.log(email);
+    console.log(password);
+    loadingHandler();
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAcUSoG5Y93hsifS17N9wgXIMstnVwlnCQ",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }),
+      }
+    )
+      .then((response) => {
+        loadingHandler();
+        if (response.ok) {
+          return response.json();
+        } else {
+          return response.json().then((data) => {
+            let errorMessage = "Authentication failed!";
+            // if (data && data.error && data.error.message) {
+            //   errorMessage = data.error.message;
+            // }
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {})
+      .catch((err) => {
+        alert(err.message);
+      });
   };
 
   return (
@@ -36,14 +72,19 @@ const Login = () => {
               <p className="form-title">Chatster</p>
               <img alt="logo" className="form-logo h-1/3" src={logo} />
               <input
-                type="text"
+                type="email"
+                name="email"
+                onChange={handleEmailChanged}
                 className="rounded m-5 bg-transparent border-2 border-white w-3/5 "
                 placeholder="Email"
               />
               <input
-                type="text"
+                type={!showPassword ? "password" : "text"}
+                name="password"
+                onChange={handlePasswordChanged}
                 className="rounded m-5 bg-transparent border-2 border-white w-3/5 "
                 placeholder="Password"
+                id="password"
               />
               {!showPassword ? (
                 <>
@@ -57,7 +98,10 @@ const Login = () => {
                   <i class="fas fa-eye icon" onClick={showPasswordHandler}></i>
                 </>
               )}
-              <button className="border-2 rounded w-3/5 mb-4"> Login</button>
+              <button className="border-2 rounded w-3/5 mb-4" onClick={submit}>
+                {" "}
+                Login
+              </button>
             </>
           ) : (
             <>
