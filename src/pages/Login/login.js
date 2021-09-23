@@ -28,7 +28,7 @@ const Login = () => {
     event.preventDefault();
     console.log(email);
     console.log(password);
-    loadingHandler();
+    // loadingHandler();
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAcUSoG5Y93hsifS17N9wgXIMstnVwlnCQ",
       {
@@ -42,7 +42,7 @@ const Login = () => {
       }
     )
       .then((response) => {
-        loadingHandler();
+        // loadingHandler();
         if (response.ok) {
           return response.json();
         } else {
