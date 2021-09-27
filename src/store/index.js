@@ -1,5 +1,23 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
+const initialAuthenticationState = {
+  token: "",
+  logout: "",
+};
+
+const authenticationSlice = createSlice({
+  name: "authenticate",
+  initialState: initialAuthenticationState,
+  reducers: {
+    token(state, action) {
+      state.token = action.payload;
+    },
+    logout(state) {
+      state.token = "";
+    },
+  },
+});
+
 const initialLoadingState = { showLoadingIcon: false };
 
 const loadingSlice = createSlice({
@@ -62,11 +80,13 @@ const store = configureStore({
     show: showSlice.reducer,
     form: formInputSlice.reducer,
     load: loadingSlice.reducer,
+    authenticate: authenticationSlice.reducer,
   },
 });
 
 export const showActions = showSlice.actions;
 export const formActions = formInputSlice.actions;
 export const loadingActions = loadingSlice.actions;
+export const authenticationActions = authenticationSlice.actions;
 
 export default store;

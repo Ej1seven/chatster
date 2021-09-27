@@ -1,16 +1,23 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { showActions, formActions } from "../../store";
+import { showActions, formActions, authenticationActions } from "../../store";
 import logo from "../../photos/logo-white.png";
 import Register from "../Register/register";
 import "./login.css";
 
 const Login = () => {
+  let history = useHistory();
   const dispatch = useDispatch();
   const showModal = useSelector((state) => state.show.showModal);
   const showPassword = useSelector((state) => state.show.passwordIcon);
   const email = useSelector((state) => state.form.email);
   const password = useSelector((state) => state.form.password);
+  const token = useSelector((state) => state.authenticate.token);
+
+  const showToken = () => {
+    console.log(token);
+  };
 
   const showHandler = () => {
     dispatch(showActions.showModal());
@@ -24,10 +31,12 @@ const Login = () => {
   const handlePasswordChanged = (e) => {
     dispatch(formActions.password(e.target.value));
   };
+  const tokenHandler = (token) => {
+    dispatch(authenticationActions.token(token));
+  };
+
   const submit = (event) => {
     event.preventDefault();
-    console.log(email);
-    console.log(password);
     // loadingHandler();
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAcUSoG5Y93hsifS17N9wgXIMstnVwlnCQ",
@@ -55,7 +64,12 @@ const Login = () => {
           });
         }
       })
-      .then((data) => {})
+      .then((data) => {
+        console.log(email);
+        tokenHandler(data.idToken);
+        history.replace("/");
+        showToken();
+      })
       .catch((err) => {
         alert(err.message);
       });

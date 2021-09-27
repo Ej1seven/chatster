@@ -13,12 +13,12 @@ form {
 
 input:active,
 input:focus {
-  border-color: #73012e;
+  border-color: #180113;
   outline: none;
 }
 
 button {
-  background-color: #73012e;
+  background-color: #180113;
   opacity: 0.7;
 }
 
@@ -28,7 +28,7 @@ button:focus {
 }
 
 span:hover {
-  color: #73012e;
+  color: #180113;
   cursor: pointer;
 }
 

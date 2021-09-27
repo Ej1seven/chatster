@@ -10,9 +10,9 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 * {
